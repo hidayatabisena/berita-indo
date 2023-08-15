@@ -41,6 +41,10 @@ struct SettingsView: View {
                         Spacer()
                     }
                 } //: HEADER Section
+                .alignmentGuide(.listRowSeparatorLeading) { viewDimensions in
+
+                    return 0
+                }
                 
                 // MARK: - SECTION: ICONS
                 Section(header: Text("Alternate Icons")) {
@@ -102,6 +106,7 @@ struct SettingsView: View {
                   CustomListRowView(rowLabel: "Designer", rowIcon: "paintpalette", rowContent: "Han Sena", rowTintColor: .pink)
                   
                   CustomListRowView(rowLabel: "Website", rowIcon: "globe", rowTintColor: .indigo, rowLinkLabel: "Hidayat Abisena", rowLinkDestination: "https://hidayatabisena.com")
+                        
                   
                 } //: SECTION
                 
