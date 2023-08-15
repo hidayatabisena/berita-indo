@@ -42,7 +42,8 @@ class NewsViewModel: ObservableObject {
                             image: newsData.image,
                             author: newsData.author,
                             link: newsData.link,
-                            isoDate: newsData.isoDate
+                            isoDate: newsData.isoDate,
+                            categories: newsData.categories
                         )
                     }
                     self.isLoading = false

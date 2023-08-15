@@ -26,12 +26,12 @@ struct NewsListView: View {
                 }
                 .listStyle(.plain)
                 .navigationTitle("Berita Indo")
+                .searchable(text: $newsVM.searchText)
                 .refreshable {
                     await newsVM.fetchNews()
                 }
             }
         }
-        .conditionalSearchable(isSearchable: !newsVM.isLoading, viewModel: newsVM)
         .task {
             await newsVM.fetchNews()
         }

@@ -51,7 +51,7 @@ struct NewsRowView: View {
         image: NewsImage(small: "", medium: "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_480,f_jpg/v1634025439/01h7mjymq414642m0rfxmzeqsh.jpg", large: "", extraLarge: ""),
         author: "This is author",
         link: "This is link",
-        isoDate: "2023-08-13T02:44:58.000Z")
+        isoDate: "2023-08-13T02:44:58.000Z", categories: ["Satu", "Dua", "Tiga"])
     )
 }
 

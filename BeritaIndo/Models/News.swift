@@ -15,6 +15,7 @@ struct News: Identifiable {
     let author: String       // Add author property
     let link: String         // Add link property
     let isoDate: String      // Add isoDate property
+    let categories: [String]
 }
 
 struct NewsImage: Codable {
