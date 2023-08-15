@@ -12,6 +12,9 @@ struct LiveTextView: View {
     @State private var startScanning = false
     @State private var scanText = ""
     
+    @State private var buttonText  = "Copy"
+    private let pasteboard = UIPasteboard.general
+    
     var body: some View {
         VStack(spacing: 0) {
             ZStack(alignment: .bottom) {
@@ -24,15 +27,33 @@ struct LiveTextView: View {
                     .offset(x: 0, y: -16)
             }
             
-            Text(scanText)
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
-                .background(in: Rectangle())
-                .backgroundStyle(Color(uiColor: .systemGray6))
+            ZStack(alignment: .topTrailing) {
+                Text(scanText)
+                    .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
+                    .background(in: Rectangle())
+                    .backgroundStyle(Color(uiColor: .systemGray6))
+                
+                Button(action: {
+                   copyToClipboard()
+                }, label: {
+                    Label(buttonText, systemImage: "doc.on.doc")
+                })
+                .padding()
+            }
         }
         .task {
             if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
                 startScanning.toggle()
             }
+        }
+    }
+    
+    func copyToClipboard() {
+        pasteboard.string = self.scanText
+        
+        self.buttonText = "Copied!"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.buttonText = "Copy"
         }
     }
 }
