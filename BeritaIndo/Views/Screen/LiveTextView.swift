@@ -14,15 +14,20 @@ struct LiveTextView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            DataScanner(startScanning: $startScanning, scanText: $scanText)
-                .frame(height: 400)
+            ZStack(alignment: .bottom) {
+                DataScanner(startScanning: $startScanning, scanText: $scanText)
+                    .frame(height: 400)
+                
+                Text("tap to capture")
+                    .font(.callout)
+                    .fontWeight(.thin)
+                    .offset(x: 0, y: -16)
+            }
             
             Text(scanText)
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
                 .background(in: Rectangle())
                 .backgroundStyle(Color(uiColor: .systemGray6))
-                .padding()
-            
         }
         .task {
             if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
