@@ -60,3 +60,20 @@ struct CustomListRowView: View {
         )
     }
 }
+
+// Uncomment this code for Xcode 14 below
+// Xcode 14
+//struct CustomListRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        List {
+//CustomListRowView(
+//    rowLabel: "Website",
+//    rowIcon: "globe",
+//    rowContent: nil,
+//    rowTintColor: .pink,
+//    rowLinkLabel: "Hidayat Abisena",
+//    rowLinkDestination: "https://hidayatabisena.com"
+//)
+//}
+//    }
+//}

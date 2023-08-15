@@ -41,3 +41,11 @@ struct NewsListView: View {
 #Preview {
     NewsListView()
 }
+
+// Uncomment this code for Xcode 14 below
+// Xcode 14
+//struct NewsListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewsListView()
+//    }
+//}

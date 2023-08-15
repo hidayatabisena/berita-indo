@@ -17,11 +17,10 @@ struct MainView: View {
                 }
                 .tag(0)
             
-            Text("Second tab")
-                .font(.title)
+            LiveTextView()
                 .tabItem {
-                    Image(systemName: "doc.text.magnifyingglass")
-                    Text("Search")
+                    Image(systemName: "doc.viewfinder")
+                    Text("Live Text")
                 }
                 .tag(1)
             
@@ -38,3 +37,11 @@ struct MainView: View {
 #Preview {
     MainView()
 }
+
+// Uncomment this code for Xcode 14 below
+// Xcode 14
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView()
+//    }
+//}
