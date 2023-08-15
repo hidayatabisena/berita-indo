@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5305C3262A8B683500206D37 /* ConditionalSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5305C3252A8B683500206D37 /* ConditionalSearchable.swift */; };
 		530BE1062A8913C100452BF3 /* String+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530BE1052A8913C000452BF3 /* String+DateFormatter.swift */; };
 		53533F6F2A89E3B50018B340 /* CustomListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53533F6E2A89E3B50018B340 /* CustomListRowView.swift */; };
 		53533F722A89E61F0018B340 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53533F712A89E61F0018B340 /* SettingsView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5305C3252A8B683500206D37 /* ConditionalSearchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalSearchable.swift; sourceTree = "<group>"; };
 		530BE1052A8913C000452BF3 /* String+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormatter.swift"; sourceTree = "<group>"; };
 		53533F6E2A89E3B50018B340 /* CustomListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListRowView.swift; sourceTree = "<group>"; };
 		53533F712A89E61F0018B340 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5305C3242A8B682100206D37 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5305C3252A8B683500206D37 /* ConditionalSearchable.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		530BE1042A8913AE00452BF3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		53B1A5A02A88E93C0055A020 /* BeritaIndo */ = {
 			isa = PBXGroup;
 			children = (
+				5305C3242A8B682100206D37 /* Helper */,
 				53533F6D2A89E3A20018B340 /* Components */,
 				530BE1042A8913AE00452BF3 /* Extensions */,
 				53B1A5B22A88EC210055A020 /* Supporting */,
@@ -238,6 +249,7 @@
 				53DB91822A8B225B0056BE33 /* LiveTextView.swift in Sources */,
 				53B1A5B42A88F4D90055A020 /* News.swift in Sources */,
 				53B1A5B62A88F4FE0055A020 /* NewsResponse.swift in Sources */,
+				5305C3262A8B683500206D37 /* ConditionalSearchable.swift in Sources */,
 				53533F6F2A89E3B50018B340 /* CustomListRowView.swift in Sources */,
 				53B1A5BF2A88FBC40055A020 /* NewsDetailView.swift in Sources */,
 				53B1A5BB2A88F62C0055A020 /* NewsRowView.swift in Sources */,

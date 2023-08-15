@@ -10,6 +10,18 @@ import Foundation
 class NewsViewModel: ObservableObject {
     @Published var news: [News] = []
     @Published var isLoading = false
+    @Published var searchText: String = ""
+    
+    // Search function
+    var filteredNews: [News] {
+        if searchText.isEmpty {
+            return news
+        } else {
+            return news.filter { news in
+                news.title.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
     
     func fetchNews() async {
         DispatchQueue.main.async {

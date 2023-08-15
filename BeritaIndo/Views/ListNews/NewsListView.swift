@@ -10,7 +10,6 @@ import SwiftUI
 struct NewsListView: View {
     
     @StateObject private var newsVM = NewsViewModel()
-
     
     var body: some View {
         NavigationStack {
@@ -19,7 +18,7 @@ struct NewsListView: View {
                 ProgressView("Load News...")
             } else {
                 
-                List(newsVM.news) { newsItem in
+                List(newsVM.filteredNews) { newsItem in
                     NavigationLink(destination: NewsDetailView(news: newsItem)) {
                         NewsRowView(news: newsItem)
                     }
@@ -32,6 +31,7 @@ struct NewsListView: View {
                 }
             }
         }
+        .conditionalSearchable(isSearchable: !newsVM.isLoading, viewModel: newsVM)
         .task {
             await newsVM.fetchNews()
         }
@@ -49,3 +49,5 @@ struct NewsListView: View {
 //        NewsListView()
 //    }
 //}
+
+

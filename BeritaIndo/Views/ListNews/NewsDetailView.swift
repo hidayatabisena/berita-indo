@@ -25,6 +25,7 @@ struct NewsDetailView: View {
                                 .frame(width: 80, height: 80)
                         }
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 220)
+                        .clipped()
                         
                         VStack(alignment: .leading, spacing: 16) {
                             Text("Author: \(news.author)")
