@@ -11,17 +11,38 @@ class NewsViewModel: ObservableObject {
     @Published var news: [News] = []
     @Published var isLoading = false
     @Published var searchText: String = ""
+    @Published var selectedCategory: String? = nil
+    
+    // Fetch News Categories
+    var uniqueCategories: [String] {
+        Set(news.flatMap { $0.categories }).sorted()
+    }
     
     // Search function
+//    var filteredNews: [News] {
+//        if searchText.isEmpty {
+//            return news
+//        } else {
+//            return news.filter { news in
+//                news.title.localizedCaseInsensitiveContains(searchText)
+//            }
+//        }
+//    }
+    
     var filteredNews: [News] {
-        if searchText.isEmpty {
-            return news
-        } else {
+        if let selectedCategory = selectedCategory, !selectedCategory.isEmpty {
+            return news.filter { news in
+                news.categories.contains(selectedCategory)
+            }
+        } else if !searchText.isEmpty {
             return news.filter { news in
                 news.title.localizedCaseInsensitiveContains(searchText)
             }
+        } else {
+            return news
         }
     }
+
     
     func fetchNews() async {
         DispatchQueue.main.async {

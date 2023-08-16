@@ -13,23 +13,23 @@ struct NewsListView: View {
     
     var body: some View {
         NavigationStack {
-            
             if newsVM.isLoading {
                 ProgressView("Load News...")
             } else {
-                
-                List(newsVM.filteredNews) { newsItem in
-                    NavigationLink(destination: NewsDetailView(news: newsItem)) {
-                        NewsRowView(news: newsItem)
+                VStack {
+                    CategoriesView(categories: newsVM.uniqueCategories, selectedCategory: $newsVM.selectedCategory)
+                    List(newsVM.filteredNews) { newsItem in
+                        NavigationLink(destination: NewsDetailView(news: newsItem)) {
+                            NewsRowView(news: newsItem)
+                        }
                     }
-                    
-                }
-                .listStyle(.plain)
-                .navigationTitle("Berita Indo")
-                .searchable(text: $newsVM.searchText)
-                .refreshable {
-                    await newsVM.fetchNews()
-                }
+                    .listStyle(.plain)
+                    .navigationTitle("Berita Indo")
+                    .searchable(text: $newsVM.searchText)
+                    .refreshable {
+                        await newsVM.fetchNews()
+                    }
+                } //: VSTACK
             }
         }
         .task {
